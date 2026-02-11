@@ -1,0 +1,543 @@
+/* Reset & Base Styles */
+:root {
+    --bg-color: #0c0c0c;
+    --text-color: #f0f0f0;
+    --accent-color: #d4af37;
+    /* Muted Gold */
+    --secondary-text: #888;
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --section-padding: 100px 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    cursor: none;
+    /* Custom cursor */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Custom Cursor */
+.cursor-dot,
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--text-color);
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--text-color);
+    transition: width 0.2s, height 0.2s;
+}
+
+/* Typography Utilities */
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.center-text {
+    text-align: center;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    mix-blend-mode: difference;
+    /* Ensures visibility on light/dark backgrounds */
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 6rem;
+    /* Large impact */
+    font-weight: 700;
+    letter-spacing: 5px;
+    line-height: 1;
+    margin-bottom: 1rem;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: var(--accent-color);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.scroll-indicator .line {
+    width: 1px;
+    height: 60px;
+    background-color: var(--text-color);
+    margin-top: 10px;
+}
+
+/* Sections General */
+.section-padding {
+    padding: var(--section-padding);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* About Section */
+.container-flex {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-image {
+    flex: 1;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 1.5s ease;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.latin-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.translation {
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.description {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* Info Section */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+    align-items: stretch;
+    /* Ensure all items are same height */
+}
+
+.info-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+
+    /* Strict Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Center content vertically in the box */
+    height: 280px;
+    /* Fixed height for the box */
+}
+
+.info-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+}
+
+.info-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--secondary-text);
+
+    /* Fixed Container for Header */
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 20px;
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+.info-item .highlight,
+.info-item .time {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+
+    /* Fixed Container for Value */
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Barista School Split Layout */
+.school {
+    height: auto;
+    min-height: 100vh;
+    display: block;
+    padding: 0;
+    background-color: #111;
+}
+
+.school-split-container {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+.school-image {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.school-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.school-info {
+    flex: 1;
+    min-width: 300px;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1a1a1a;
+}
+
+/* Japanese & Typography Styles */
+.school-title-small {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.program-name {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.program-sub {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    /* Japan tracking */
+    opacity: 0.7;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+    display: inline-block;
+}
+
+.program-desc {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 0.95rem;
+    line-height: 2.2;
+    color: #ccc;
+    margin-bottom: 50px;
+    max-width: 600px;
+    letter-spacing: 0.05em;
+}
+
+.desc-highlight {
+    display: block;
+    margin-top: 15px;
+    color: white;
+    font-weight: 500;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.spec-item {
+    border-left: 2px solid var(--accent-color);
+    padding-left: 20px;
+}
+
+.spec-label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--secondary-text);
+    margin-bottom: 8px;
+    letter-spacing: 1.5px;
+    font-family: var(--font-heading);
+}
+
+.spec-value {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.ja-value {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.spec-note {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--secondary-text);
+    margin-top: 5px;
+    font-family: 'Zen Old Mincho', serif;
+}
+
+.mt-4 {
+    margin-top: 2rem;
+    align-self: flex-start;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid var(--text-color);
+    background: transparent;
+    color: var(--text-color);
+    font-family: var(--font-heading);
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* Gallery Section */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    position: relative;
+    height: 400px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    padding: 50px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.footer-copy {
+    color: var(--secondary-text);
+    font-size: 0.8rem;
+}
+
+.cta-note {
+    font-size: 0.7rem;
+    color: var(--secondary-text);
+    margin-top: 10px;
+    font-family: var(--font-body);
+}
+
+/* Animations (Helper Classes) */
+.reveal-text {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.reveal-image {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container-flex {
+        flex-direction: column;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .school-info {
+        padding: 60px 30px;
+    }
+
+    .program-name {
+        font-size: 2.2rem;
+    }
+
+    .specs-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .school-content {
+        padding: 40px 20px;
+        width: 90%;
+    }
+}

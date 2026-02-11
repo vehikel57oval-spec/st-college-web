@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST.college -POSTERA CRESCAM LAUDE-</title>
+    <meta name="description" content="Urban & Stylish Cafe and Barista School in [City]. Postera Crescam Laude.">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@1,400&family=Zen+Old+Mincho:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header class="header">
+        <div class="logo">ST.college</div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#info">Info</a></li>
+                <li><a href="#school">School</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg" style="background-image: url('assets/gallery-1.jpg');"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title glitch" data-text="ST.college">ST.college</h1>
+                <p class="hero-subtitle">POSTERA CRESCAM LAUDE</p>
+            </div>
+            <div class="scroll-indicator">
+                <span>SCROLL</span>
+                <div class="line"></div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section id="about" class="about section-padding">
+            <div class="container container-flex">
+                <div class="about-image reveal-image">
+                    <img src="assets/gallery-2.jpg" alt="Interior Detail">
+                </div>
+                <div class="about-text reveal-text">
+                    <h2 class="section-title">Philosophy</h2>
+                    <p class="latin-quote">"Postera crescam laude"</p>
+                    <p class="translation">I shall grow in the praise of posterity.</p>
+                    <p class="description">
+                        We blend the art of coffee with the pursuit of excellence.
+                        In an urban sanctuary, experience a timeless dedication to craft.
+                        Where every cup tells a story of precision and passion.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info / Hours Section -->
+        <section id="info" class="info section-padding dark-bg">
+            <div class="container">
+                <h2 class="section-title center-text reveal-text">Information</h2>
+                <div class="info-grid">
+                    <div class="info-item reveal-card">
+                        <h3>OFF DAY</h3>
+                        <p class="highlight">WED / THU</p>
+                    </div>
+                    <div class="info-item reveal-card">
+                        <h3>EAT IN</h3>
+                        <p class="time">7:00 - 17:00</p>
+                    </div>
+                    <div class="info-item reveal-card">
+                        <h3>TAKE AWAY</h3>
+                        <p class="time">7:00 - 18:00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Barista School Section (Localized) -->
+        <section id="school" class="school section-padding">
+            <div class="school-split-container">
+                <!-- Image Side -->
+                <div class="school-image">
+                    <img src="assets/gallery-5.jpg" alt="Latte Art Training">
+                </div>
+
+                <!-- Content Side -->
+                <div class="school-info reveal-text">
+                    <h2 class="section-title school-title-small">Barista School</h2>
+                    <h3 class="program-name">JBCA Certified Program</h3>
+                    <p class="program-sub">日本バリスタ協会認定プログラム</p>
+
+                    <p class="program-desc">
+                        JBCAバリスタ教育プログラムにより、現場で活かせる実技スキルを。<br>
+                        豆の産地・精製・抽出方法など、コーヒーの基礎知識に加え、<br>
+                        プロフェッショナルなマシンを使用した実技指導を提供します。<br>
+                        <span class="desc-highlight">本物の知識とスキルを、あなたの手に。</span>
+                    </p>
+
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="spec-label">Duration</span>
+                            <span class="spec-value">2 Hours × 7 Sessions</span>
+                            <span class="spec-note ja-note">約1.5ヶ月 / 全7回</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Curriculum</span>
+                            <span class="spec-value ja-value">
+                                ラテ<br>
+                                ピッコロラテ<br>
+                                カプチーノ
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="school-cta">
+                        <a href="https://docs.google.com/forms/" target="_blank" class="btn-primary mt-4">
+                            お申し込み (Apply)
+                        </a>
+                        <p class="cta-note">※外部フォームへ移動します</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery section-padding">
+            <div class="container">
+                <h2 class="section-title reveal-text">Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item reveal-image">
+                        <img src="assets/gallery-3.jpg" alt="Gallery Image 1">
+                    </div>
+                    <div class="gallery-item reveal-image">
+                        <img src="assets/gallery-4.jpg" alt="Gallery Image 2">
+                    </div>
+                    <!-- Reuse distinct images if needed or grid layout -->
+                    <div class="gallery-item reveal-image">
+                        <img src="assets/gallery-1.jpg" alt="Gallery Image 3">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">ST.college</div>
+            <p class="footer-copy">&copy; 2024 ST.college. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
