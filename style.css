@@ -93,6 +93,13 @@ ul {
     font-weight: 700;
 }
 
+.small-t {
+    font-size: 0.72em;
+    /* Adjust to match lowercase height */
+    vertical-align: 0.05em;
+    /* Optical adjustment */
+}
+
 .nav ul {
     display: flex;
     gap: 30px;
